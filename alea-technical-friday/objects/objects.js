@@ -115,3 +115,15 @@ function Shoe(size, color) {
 };
 var myShoe = new Shoe(42, 'red');
 console.log('My shoe color: ' + myShoe.color);
+myShoe.changeColor('amarillo');
+console.log('My shoe color: ' + myShoe.color);
+//  MEJOR HACER DECLARALO EN EL PROTOTIPO
+// no se copia en cada objecto que se crea-> la otra manera, cada vez que creas un objecto->se copia
+// si está en el prototipo->se queda en la clase "base"
+// subclass extends superclass
+Shoe.prototype.changeToColor = function(newColor){
+    this.color = newColor;
+};
+myShoe.changeToColor('naranja');
+console.log('My shoe color: ' + myShoe.color);
+

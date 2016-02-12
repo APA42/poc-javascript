@@ -1,0 +1,50 @@
++++++++++++++++++++++++++++++++++++++++++++++
++ https://github.com/islomar/poc-javascript +
++++++++++++++++++++++++++++++++++++++++++++++
+
+Javascript evolution - Ricardo Borillo
+https://www.youtube.com/watch?v=ofTM9TxCH5A
+
+==> Hide/Show <==
+*) show-hide-with-class.html
+necesitamos css -> clase .hide { display: none}
+
+*) show-hide-html-elements-with-jquery.html
+
+==> Hoisting <==
+Orden en el que cargan las cosas en javascript
+
+Function expression-> La puedes usar en cualquier momento
+function sum(x, y) {
+	return x+y
+}
+
+Function declaration/statements -> al llamar a la variable, es cuando resuelve
+Asigno a una variable a una funcion
+var sumar = function() {
+	return x + y
+}
+
+==> NaN (not a number) <==
+number-presence.html
+
+Resumen->no te sirve para saber si es un número o no.....
+
+La forma correcta es
+function isThisActuallyANumberDontLie( data ) {
+    return ( typeof data === "number" && !isNaN(data) );
+}
+
+==> Variables Globales <==
+global-variables.html
+
+Recomendación->
+single-global-variable.html
+
+
+==> Objetos <==
+Tipos simples -> numbers, strings, booleans, null and undefined
+El resto son objetos (clave-valor)
+objects.html
+
+prototype es algo que tienen todos los objetos en JS
