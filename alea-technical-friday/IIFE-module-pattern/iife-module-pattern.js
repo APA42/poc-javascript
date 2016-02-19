@@ -10,7 +10,7 @@
  * MODULE pattern
  *
  * A module is a function or object that presents an interface but that hides its state and implementation.
- * TODO: ver p40-42 TGP
+ * TODO: ver p40-42 TGP (JS: The Good Parts)
  */
 
 
