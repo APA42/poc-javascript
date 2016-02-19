@@ -102,24 +102,24 @@ var status = Quo.prototype.get_status.apply(statusObject);
 console.log("status: " + status);
 var myQuo = new Quo("myQuo");
 console.log("status myQuo: " + myQuo.get_status());
-//
-///**
-// * Nested functions (review)
-// */
-//console.log("------------------Apply invocation pattern--------------------");
-//var myNestedFunctionsObject = {
-//    func1: function () {
-//        console.log(this); // logs myNestedFunctionsObject
-//        var func2 = function () {
-//            console.log(this); // logs window, and will do so from this point on
-//            var func3 = function () {
-//                console.log(this); // logs window, as it's the head object
-//            }();
-//        }();
-//    }
-//};
-//myNestedFunctionsObject.func1();
-//
+
+/**
+ * Nested functions (review)
+ */
+console.log("------------------Apply invocation pattern--------------------");
+var myNestedFunctionsObject = {
+    func1: function () {
+        console.log(this); // logs myNestedFunctionsObject
+        var func2 = function () {
+            console.log(this); // logs window, and will do so from this point on
+            var func3 = function () {
+                console.log(this); // logs window, as it's the head object
+            }();
+        }();
+    }
+};
+myNestedFunctionsObject.func1();
+
 ///**
 // * Example with two different 'this' bindings
 // */

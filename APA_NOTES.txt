@@ -84,3 +84,4 @@ Este es el caso normal (viniendo de C++)
 - Apply invocation pattern
 apply -> le indicas cual es el this para ejecutar la función
 
+- Apply invocation pattern-->Nested functions
