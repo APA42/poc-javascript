@@ -10,14 +10,21 @@
  * MODULE pattern
  *
  * A module is a function or object that presents an interface but that hides its state and implementation.
+<<<<<<< HEAD
  * TODO: ver p40-42 TGP (JS: The Good Parts)
+=======
+ * TODO: ver p40-42 TGP
+ *
+ * Ventajas: no se usa el new ni el this (desaconsejado por Crockford en TGP)
+ *
+>>>>>>> remotes/islomar-poc/master
  */
 
 
 var explorerAnswer = "agnostic";
 var madeItAcross = true;
 
-var LEXICALLAKE = function (answer, foundShore) {
+var LEXICALLAKE = (function (answer, foundShore) {
 
   var depth = 400;
   var fish = 1200;
@@ -48,12 +55,16 @@ var LEXICALLAKE = function (answer, foundShore) {
     }
 
   };
-}(explorerAnswer, madeItAcross);
-
+})(explorerAnswer, madeItAcross);
 
 console.log(LEXICALLAKE);
 
+<<<<<<< HEAD
 console.log('LEXICALLAKE.depth: ' + LEXICALLAKE.depth);
 console.log('LEXICALLAKE.getDepth(): ' + LEXICALLAKE.getDepth());
 LEXICALLAKE.setDepth(666);
 console.log('LEXICALLAKE.getDepth(): ' + LEXICALLAKE.getDepth());
+=======
+console.log('LEXICALLAKE.depth: ' + LEXICALLAKE.depth);  // undefined >> there is no visibility
+console.log('LEXICALLAKE.getDepth(): ' + LEXICALLAKE.getDepth()); // 400
+>>>>>>> remotes/islomar-poc/master

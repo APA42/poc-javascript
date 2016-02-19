@@ -42,7 +42,7 @@ console.log(flight.airline);
  * the objects that are based on that prototype.
  *
  * The prototype link is used only in retrieval. If we try to retrieve a property value from an object, and if the object lacks the property name,
- * then JS attempts to retrieve the property value from the prototype object. If it does NOT exist anywhere in the protype chain,
+ * then JS attempts to retrieve the property value from the prototype object. If it does NOT exist anywhere in the prototype chain,
  * the result is the undefined value (delegation).
  *
  */
@@ -53,8 +53,10 @@ function Bird() {
 
 // SyntaxBird Inherits From Parent Bird
 function SyntaxBird() {
+    this.age = 6; // 'this' is bound to SyntaxBird object, not to LoopLover, that's why loopy.age failed...
 }
 SyntaxBird.prototype = Object.create(Bird.prototype);
+//SyntaxBird.prototype.age = 4;
 
 var LoopLover = function (birdFood) {
     this.birdFood = birdFood;
@@ -65,7 +67,14 @@ LoopLover.prototype = Object.create(SyntaxBird.prototype);
 // bird variables below inherit from above prototype chain
 var loopy = new LoopLover("loops");
 
-console.log(loopy);
+console.log("loopy instanceof Bird: ", loopy instanceof Bird);
+console.log("loopy instanceof SyntaxBird: " + (loopy instanceof SyntaxBird));
+console.log("loopy: " + loopy);
+console.log("loopy.age: " + loopy.age); // it looks for age in the LoopLover object and all the prototype chain (but not in the SyntaxBird object)
+console.log("LoopLover.prototype: " + LoopLover.prototype);
+console.log("LoopLover.prototype: " + LoopLover.prototype);
+console.log("LoopLover.__proto__: " + LoopLover.__proto__);
+console.log("LoopLover.__proto__(): " + LoopLover.__proto__());
 
 
 /**
@@ -115,6 +124,7 @@ function Shoe(size, color) {
 };
 var myShoe = new Shoe(42, 'red');
 console.log('My shoe color: ' + myShoe.color);
+
 myShoe.changeColor('amarillo');
 console.log('My shoe color: ' + myShoe.color);
 //  MEJOR HACER DECLARALO EN EL PROTOTIPO
@@ -126,4 +136,3 @@ Shoe.prototype.changeToColor = function(newColor){
 };
 myShoe.changeToColor('naranja');
 console.log('My shoe color: ' + myShoe.color);
-
