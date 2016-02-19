@@ -76,5 +76,9 @@ Toda función, de forma implicita, recibe el this
 
 - Method invocation pattern
 - Function invocation pattern
+- Constructor invocation pattern
+Cuando creas con el new->el this hace referencia al objecto creado
+
+Este es el caso normal (viniendo de C++)
 
 

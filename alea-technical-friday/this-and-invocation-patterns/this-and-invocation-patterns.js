@@ -83,75 +83,75 @@ var status = "you should not be reading this";
 var myQuo = new Quo("confused"); //Functions which are intended to bused with the 'new' prefix are called constructors: capitalize names >> not recommended.
 console.log("myQuo.get_status(): " + myQuo.get_status());
 
-/**
- * Apply invocation pattern
- * ========================
- * The 'apply' method lets us construct an array of argumetns to use to invoke a function.
- * It also lets us choose the value of 'this'.
- * The 'apply' method takes two parameters: the first is the value that should be bound to 'this'. The second is an array of parameters.
- */
-console.log("--------------------------------------");
-var array = [3, 4];
-var sum = add.apply(null, array); //sum is 7
-
-var statusObject = {
-    status: 'A-OK'
-};
-var status = Quo.prototype.get_status.apply(statusObject);
-console.log("status: " + status);
-
-/**
- * Nested functions (review)
- */
-console.log("------------------Apply invocation pattern--------------------");
-var myNestedFunctionsObject = {
-    func1: function () {
-        console.log(this); // logs myNestedFunctionsObject
-        var func2 = function () {
-            console.log(this); // logs window, and will do so from this point on
-            var func3 = function () {
-                console.log(this); // logs window, as it's the head object
-            }();
-        }();
-    }
-};
-myNestedFunctionsObject.func1();
-
-/**
- * Example with two different 'this' bindings
- */
-console.log("-----------------Example with two different 'this' bindings---------------------");
-var foo = 'foo';
-var myObject = {
-    foo: 'I am myObject.foo'
-};
-
-var sayFoo = function () {
-    console.log(this['foo']);
-};
-
-myObject.sayFoo = sayFoo;
-
-myObject.sayFoo();  // "I am myObject.foo"  > 'this' refers to myObject
-sayFoo();           // "foo" > 'this' refers to window
-
-
-/**
- * Borillo's example
- *
- */
-console.log("------------------Borillo's example--------------------");
-var point = {
-    x: 10,
-    y: 20,
-    show: function () {
-        console.log(this.x, this.y);
-    }
-};
-var myShow = point.show;
-myShow();           // fail!!       >>> undefined undefined
-point.show();       // works!!      >>> 10 20
-myShow.call(point); // works!       >>> 10 20
-
-var myShowBinded = point.show.bind(point);    // binds a context, you don't need to pass it with call() or apply()
-myShowBinded();     // now it works!   >>> 10 20
+///**
+// * Apply invocation pattern
+// * ========================
+// * The 'apply' method lets us construct an array of argumetns to use to invoke a function.
+// * It also lets us choose the value of 'this'.
+// * The 'apply' method takes two parameters: the first is the value that should be bound to 'this'. The second is an array of parameters.
+// */
+//console.log("--------------------------------------");
+//var array = [3, 4];
+//var sum = add.apply(null, array); //sum is 7
+//
+//var statusObject = {
+//    status: 'A-OK'
+//};
+//var status = Quo.prototype.get_status.apply(statusObject);
+//console.log("status: " + status);
+//
+///**
+// * Nested functions (review)
+// */
+//console.log("------------------Apply invocation pattern--------------------");
+//var myNestedFunctionsObject = {
+//    func1: function () {
+//        console.log(this); // logs myNestedFunctionsObject
+//        var func2 = function () {
+//            console.log(this); // logs window, and will do so from this point on
+//            var func3 = function () {
+//                console.log(this); // logs window, as it's the head object
+//            }();
+//        }();
+//    }
+//};
+//myNestedFunctionsObject.func1();
+//
+///**
+// * Example with two different 'this' bindings
+// */
+//console.log("-----------------Example with two different 'this' bindings---------------------");
+//var foo = 'foo';
+//var myObject = {
+//    foo: 'I am myObject.foo'
+//};
+//
+//var sayFoo = function () {
+//    console.log(this['foo']);
+//};
+//
+//myObject.sayFoo = sayFoo;
+//
+//myObject.sayFoo();  // "I am myObject.foo"  > 'this' refers to myObject
+//sayFoo();           // "foo" > 'this' refers to window
+//
+//
+///**
+// * Borillo's example
+// *
+// */
+//console.log("------------------Borillo's example--------------------");
+//var point = {
+//    x: 10,
+//    y: 20,
+//    show: function () {
+//        console.log(this.x, this.y);
+//    }
+//};
+//var myShow = point.show;
+//myShow();           // fail!!       >>> undefined undefined
+//point.show();       // works!!      >>> 10 20
+//myShow.call(point); // works!       >>> 10 20
+//
+//var myShowBinded = point.show.bind(point);    // binds a context, you don't need to pass it with call() or apply()
+//myShowBinded();     // now it works!   >>> 10 20
