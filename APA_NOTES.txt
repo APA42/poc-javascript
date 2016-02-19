@@ -48,3 +48,24 @@ El resto son objetos (clave-valor)
 objects.html
 
 prototype es algo que tienen todos los objetos en JS
+
+
+==> IIFE <==
+Es una función que se ejecuta en el momento que se declara
+
+var miFuncion = function() { console.log("hola");}();
+miFuncion tiene el valor/resultado de ejecutar la función
+
+
+IIFE->Engancha con el patrón modulo
+Sirve para: encapsular propiedades públicas y privada
+
+Puedo devolver objectos, solo tengo lo retornado, no las variables
+
+console.log(LEXICALLAKE);
+
+console.log('LEXICALLAKE.depth: ' + LEXICALLAKE.depth);  // No tengo visibilidad
+console.log('LEXICALLAKE.getDepth(): ' + LEXICALLAKE.getDepth());
+
+Ejemplo al vuelo, añadimos el setter de setDepth => no hay new, no hay this
+No se
