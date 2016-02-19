@@ -138,23 +138,29 @@ myObject.sayFoo = sayFoo;
 myObject.sayFoo();  // "I am myObject.foo"  > 'this' refers to myObject
 sayFoo();           // "foo" > 'this' refers to window
 
-//
-///**
-// * Borillo's example
-// *
-// */
-//console.log("------------------Borillo's example--------------------");
-//var point = {
-//    x: 10,
-//    y: 20,
-//    show: function () {
-//        console.log(this.x, this.y);
-//    }
-//};
-//var myShow = point.show;
-//myShow();           // fail!!       >>> undefined undefined
-//point.show();       // works!!      >>> 10 20
-//myShow.call(point); // works!       >>> 10 20
-//
-//var myShowBinded = point.show.bind(point);    // binds a context, you don't need to pass it with call() or apply()
-//myShowBinded();     // now it works!   >>> 10 20
+
+/**
+ * Borillo's example
+ *
+ */
+console.log("------------------Borillo's example--------------------");
+var point = {
+    x: 10,
+    y: 20,
+    show: function () {
+        console.log(this.x, this.y);
+    }
+};
+var myShow = point.show;
+myShow();           // fail!!       >>> undefined undefined
+// Aquí llamamos a la función a cascoporro->this global
+
+point.show();       // works!!      >>> 10 20
+
+myShow.call(point); // works!       >>> 10 20
+// Es como el apply, le pasamos el this a usar
+
+var myShowBinded = point.show.bind(point);    // binds a context, you don't need to pass it with call() or apply()
+myShowBinded();     // now it works!   >>> 10 20
+
+// Es similiar al call/apply pero para siempre, lo bindeas

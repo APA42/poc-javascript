@@ -89,3 +89,5 @@ apply -> le indicas cual es el this para ejecutar la función
 - Apply invocation pattern-->Example with two different 'this' bindings
 Es un ejercicio para nosotros
 Lo importante no es donde declaras, sino como lo llamas
+
+- Apply invocation pattern-->Borillo's example
