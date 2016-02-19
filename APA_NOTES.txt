@@ -68,4 +68,10 @@ console.log('LEXICALLAKE.depth: ' + LEXICALLAKE.depth);  // No tengo visibilidad
 console.log('LEXICALLAKE.getDepth(): ' + LEXICALLAKE.getDepth());
 
 Ejemplo al vuelo, añadimos el setter de setDepth => no hay new, no hay this
-No se
+
+==> This and invocation patterns <==
+Según como invoques la función this hace una referencia a una cosa u otra
+
+
+Toda función, de forma implicita, recibe el this
+
