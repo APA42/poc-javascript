@@ -85,3 +85,7 @@ Este es el caso normal (viniendo de C++)
 apply -> le indicas cual es el this para ejecutar la función
 
 - Apply invocation pattern-->Nested functions
+
+- Apply invocation pattern-->Example with two different 'this' bindings
+Es un ejercicio para nosotros
+Lo importante no es donde declaras, sino como lo llamas
