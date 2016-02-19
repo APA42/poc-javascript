@@ -81,4 +81,6 @@ Cuando creas con el new->el this hace referencia al objecto creado
 
 Este es el caso normal (viniendo de C++)
 
+- Apply invocation pattern
+apply -> le indicas cual es el this para ejecutar la función
 

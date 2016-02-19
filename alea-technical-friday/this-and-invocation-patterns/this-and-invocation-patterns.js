@@ -83,22 +83,25 @@ var status = "you should not be reading this";
 var myQuo = new Quo("confused"); //Functions which are intended to bused with the 'new' prefix are called constructors: capitalize names >> not recommended.
 console.log("myQuo.get_status(): " + myQuo.get_status());
 
-///**
-// * Apply invocation pattern
-// * ========================
-// * The 'apply' method lets us construct an array of argumetns to use to invoke a function.
-// * It also lets us choose the value of 'this'.
-// * The 'apply' method takes two parameters: the first is the value that should be bound to 'this'. The second is an array of parameters.
-// */
-//console.log("--------------------------------------");
-//var array = [3, 4];
-//var sum = add.apply(null, array); //sum is 7
-//
-//var statusObject = {
-//    status: 'A-OK'
-//};
-//var status = Quo.prototype.get_status.apply(statusObject);
-//console.log("status: " + status);
+/**
+ * Apply invocation pattern
+ * ========================
+ * The 'apply' method lets us construct an array of argumetns to use to invoke a function.
+ * It also lets us choose the value of 'this'.
+ * The 'apply' method takes two parameters: the first is the value that should be bound to 'this'. The second is an array of parameters.
+ */
+console.log("--------------------------------------");
+var array = [3, 4];
+var sum = add.apply(null, array); //sum is 7
+console.log("sum: " + sum);
+
+var statusObject = {
+    status: 'A-OK'
+};
+var status = Quo.prototype.get_status.apply(statusObject);
+console.log("status: " + status);
+var myQuo = new Quo("myQuo");
+console.log("status myQuo: " + myQuo.get_status());
 //
 ///**
 // * Nested functions (review)
