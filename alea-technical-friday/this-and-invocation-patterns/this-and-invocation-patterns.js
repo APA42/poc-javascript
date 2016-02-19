@@ -43,7 +43,7 @@ var add = function (a, b) {
     return a + b;
 };
 
-//var value = 6666666666666;
+var value = 6666666666666;
 
 myObject.double = function () {
     var that = this; //Workaround >> 'this' is bound to myObject

@@ -72,6 +72,9 @@ Ejemplo al vuelo, añadimos el setter de setDepth => no hay new, no hay this
 ==> This and invocation patterns <==
 Según como invoques la función this hace una referencia a una cosa u otra
 
-
 Toda función, de forma implicita, recibe el this
+
+- Method invocation pattern
+- Function invocation pattern
+
 
